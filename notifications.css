@@ -1,0 +1,35 @@
+*{
+    box-sizing:border-box;
+    border:0px;
+    margin: 0px;
+    padding:0px;
+}
+#notifications{
+    width:100%;
+    height:100%;
+    display:none;
+    flex-direction: column;
+}
+#notes{
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y:scroll;
+    padding:20px 0px;
+    gap:20px;
+}
+.note{
+    width:100%;
+    height:100px;
+    background-color:var(--glass);
+    border-radius:var(--round-ii);
+    flex-shrink: 0;
+    padding:10px;
+    overflow:hidden;
+}
+#note-paragraph{
+    width:100%;
+    height: 100%;
+    text-wrap:wrap;
+}

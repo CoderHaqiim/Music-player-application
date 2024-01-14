@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="notifications.css">
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="player.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div id="logo"></div>
+            <div id="search-n-profile">
+                <div id="search">
+                    <input type="text" id="searchbar"> </input>
+                    <button id="searchbtn">
+                        <img src="assets/search_bold.svg" alt="">
+                    </button>
+                </div>
+                <div id="profile">A</div>
+            </div>
+        </div>
+    </nav>
+    <div id="app">
+        <div class="container">
+            <aside></aside>
+            <main>
+                <!-- homepage -->
+                <div id="home">
+                    <div id="greetings" class="title">Hello Haqiim,</div>
+                    <div class="heading-n-slider">
+                        <div class="heading title">Albums</div>
+                        <div class="slider">
+                            <div class="slides">
+                                <div class="slide" id="slide1"></div>
+                                <div class="slide" id="slide2"></div>
+                                <div class="slide" id="slide3"></div>
+                                <div class="slide" id="slide3"></div>
+                                <div class="slide" id="slide4"></div>
+                                <div class="slide" id="slide5"></div>
+                                <div class="slide" id="slide6"></div>
+                                <div class="slide" id="slide7"></div>
+                                <div class="slide" id="slide8"></div>
+                                <div class="slide" id="slide9"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="heading-n-slider">
+                        <div class="heading title">Artists</div>
+                        <div class="slider">
+                            <div class="slides">
+                                <div class="slide" id="slide1"></div>
+                                <div class="slide" id="slide2"></div>
+                                <div class="slide" id="slide3"></div>
+                                <div class="slide" id="slide3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="playing">
+                        <div id="playingnow">now playing</div>
+                        <div id="disc">
+                            <img src="assets/disk.png" alt="">
+                        </div>
+                        <div id="song-n-author" href="player.html">
+                            <div id="song" class="title">Can you feel the love tonight</div>
+                            <div id="author">Bryan Adams</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- homepage end -->
+                <!-- playerpage -->
+                <div id="player">
+                    <div id="back-n-love">
+                        <div class="back" id="back">
+                            <img src="assets/arrow-back.svg" alt="">
+                        </div>
+                        <div id="love">
+                            <img src="assets/heart.svg" alt="">
+                        </div>
+                    </div>
+                    <div id="musicbox-n-playrange">
+                        <div id="musicbox"></div>
+                        <div id="song-n-author2">
+                            <div id="song2">Can you feel the love tonight</div>
+                            <div id="author2">Bryan Adams</div>
+                        </div>
+                        <div id="playrange">
+                            <div id="startplay">0:00</div>
+                            <input type="range" id="range" value="0">
+                            <div id="endplay">14:20</div>
+                        </div>
+                    </div>
+                    <div id="playcontrols">
+                        <div class="playcontrol" id="repeat">
+                            <img src="assets/repeat-square.svg" alt="">
+                        </div>
+                        <div class="playcontrol" id="previous">
+                            <img src="assets/previous.svg" alt="">
+                        </div>
+                        <div class="playcontrol" id="play-pause">
+                            <img src="assets/play.svg" alt="">
+                        </div>
+                        <div class="playcontrol" id="next">
+                            <img src="assets/next.svg" alt="">
+                        </div>
+                        <div class="playcontrol" id="shuffle">
+                            <img src="assets/shuffle.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- settingspage -->
+                <div id="settings">
+                    <div class="pagetitle">
+                        Settings
+                    </div>
+                </div>
+                <!-- notificationspage -->
+                <div id="notifications">
+                    <div class="pagetitle">Notifications</div>
+                    <div id="notes">
+                        <div class="note">
+                            <p id="note-paragraph" >Hello. Thank you for choosing our app. Now you can save your favourite songs and have access to them on all your devices from anywhere in the world.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- playerpage end -->
+            <!-- navigation -->
+        </div>
+    </div>
+    <div id="navigation">
+        <button class="navbtn">
+            <img src="assets/home_bold2.svg" alt="">
+        </button>
+        <button class="navbtn">
+            <img src="assets/playlist_bold.svg" alt="">
+        </button>
+        <button class="navbtn">
+            <img src="assets/add_bold.svg" alt="">
+        </button>
+        <button class="navbtn" id="notificationbtn">
+            <div class="pointer"></div>
+            <img src="assets/notification_bold.svg" alt="">
+        </button>
+        <button class="navbtn">
+            <img src="assets/setting_bold.svg" alt="">
+        </button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
