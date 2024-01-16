@@ -1,11 +1,36 @@
-const playingNow = document.querySelector("#playing")
-const home = document.querySelector("#home")
-const playerpage = document.querySelector("#player")
+const playbtn = document.querySelector("#play-pause")
+const playbox = document.querySelector("#playbox")
 
-const changePage = (item,page,page2) =>{
-    item.onclick =()=>{
-        page.style.display = "flex";
-        page2.style.display = "none";
+const musicPlayer = {
+    play:()=>playbox.play(),
+    pause:()=>playbox.pause(),
+    volume:playbox.volume,
+    next:false,
+    previous:false,
+    playing:false,
+    song:{
+        author:"",
+        duration:"",
+        image:"",
+        title:""
+    },
+    mode:{
+        repeat:false,
+        suffle:false,
+        repeatOne:false
     }
 }
-changePage(playingNow,playerpage,home)
+
+
+const setPlaying = () =>{
+    musicPlayer.play()
+    musicPlayer.playing = true
+}
+const setPause = () =>{
+    musicPlayer.pause()
+    musicPlayer.playing = false
+}
+
+playbtn.onclick=()=> {
+    !musicPlayer.playing? setPlaying(): setPause()
+}

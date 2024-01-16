@@ -10,9 +10,14 @@
     <title>Document</title>
 </head>
 <body>
+    <audio id="playbox">
+        <source src="assets/songs/doin' just fine.mp3" type="audio/mpeg">
+    </audio>
     <nav>
         <div class="container">
-            <div id="logo"></div>
+            <div id="logo">
+                <img src="assets/arrow-back.svg" alt="">
+            </div>
             <div id="search-n-profile">
                 <div id="search">
                     <input type="text" id="searchbar"> </input>
@@ -29,7 +34,7 @@
             <aside></aside>
             <main>
                 <!-- homepage -->
-                <div id="home">
+                <div id="home" class="page">
                     <div id="greetings" class="title">Hello Haqiim,</div>
                     <div class="heading-n-slider">
                         <div class="heading title">Albums</div>
@@ -72,11 +77,8 @@
                 </div>
                 <!-- homepage end -->
                 <!-- playerpage -->
-                <div id="player">
+                <div id="player" class="page">
                     <div id="back-n-love">
-                        <div class="back" id="back">
-                            <img src="assets/arrow-back.svg" alt="">
-                        </div>
                         <div id="love">
                             <img src="assets/heart.svg" alt="">
                         </div>
@@ -112,13 +114,13 @@
                     </div>
                 </div>
                 <!-- settingspage -->
-                <div id="settings">
+                <div id="settings" class="page">
                     <div class="pagetitle">
                         Settings
                     </div>
                 </div>
                 <!-- notificationspage -->
-                <div id="notifications">
+                <div id="notifications" class="page">
                     <div class="pagetitle">Notifications</div>
                     <div id="notes">
                         <div class="note">
@@ -132,23 +134,25 @@
         </div>
     </div>
     <div id="navigation">
-        <button class="navbtn">
-            <img src="assets/home_bold2.svg" alt="">
+        <button class="navbtn" id="homebtn">
+            <img class="allicon" src="assets/home_bold2.svg" alt="">
         </button>
-        <button class="navbtn">
-            <img src="assets/playlist_bold.svg" alt="">
+        <button class="navbtn" id="playlistbtn">
+            <img class="allicon" src="assets/playlist_bold.svg" alt="">
         </button>
-        <button class="navbtn">
-            <img src="assets/add_bold.svg" alt="">
+        <button class="navbtn" id="addbtn">
+            <img class="allicon" src="assets/add_bold.svg" alt="">
         </button>
         <button class="navbtn" id="notificationbtn">
             <div class="pointer"></div>
-            <img src="assets/notification_bold.svg" alt="">
+            <img class="allicon" src="assets/notification_bold.svg" alt="">
         </button>
-        <button class="navbtn">
-            <img src="assets/setting_bold.svg" alt="">
+        <button class="navbtn" id="settingsbtn">
+            <img class="allicon" src="assets/setting_bold.svg" alt="">
         </button>
     </div>
     <script src="script.js"></script>
+    <script src="player.js"></script>
+
 </body>
 </html>

@@ -13,6 +13,7 @@
     --round-iv:20px;
     --header-size-i:2rem;
     --header-size-ii:1.5rem;
+    --header-size-iii:1.2rem;
     --normal-size:1rem;
     --header-size-mini:1.2rem;
     --liner:rgba(255, 255, 255, 0.425);
@@ -37,6 +38,7 @@ button{
 img{
     width:100%;
     height:100%;
+    pointer-events:none;
 }
 .title{
     font-weight:bold;
@@ -51,10 +53,11 @@ img{
 }
 nav{
     width:100%;
-    height:9%;
+    height:7%;
     display:flex;
     align-items: center;
     justify-content:center;
+    border-bottom:solid 1px var(--liner);
 }
 nav .container{
     justify-content: space-between;
@@ -112,7 +115,7 @@ nav .container{
 }
 #app{
     width:100%;
-    height:91%;
+    height:93%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,6 +136,7 @@ main{
     height:100%;
     display:flex;
     align-items: center;
+    padding:0px 0px 80px 0px;
     justify-content:space-around;
     flex-direction: column;
 }
@@ -145,19 +149,19 @@ main{
 }
 .heading-n-slider{
     width:100%;
-    height:25%;
+    height:28%;
 }
 .heading{
     width: 100%;
-    height:20%;
-    font-size:var(--header-size-ii);
+    height:15%;
+    font-size:var(--header-size-iii);
     font-weight: bold;
     display: flex;
     align-items: center;
 }
 .slider{
     width:100%;
-    height:75%;
+    height:85%;
     position: relative;
 }
 .slides{
@@ -171,7 +175,7 @@ main{
 .slide{
     width:150px;
     height:100%;
-    border-radius:var(--round-iv);
+    border-radius:var(--round-iii);
     background-color: blueviolet;
     flex-shrink:0;
 }
@@ -234,7 +238,7 @@ main{
 }
 #navigation{
     width:100%;
-    height:10vh;
+    height:8.5vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
