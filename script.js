@@ -11,6 +11,7 @@ const playingNow = document.querySelector("#playing")
 const pages = document.querySelectorAll(".page")
 const allicons = document.querySelectorAll(".allicon")
 const logo = document.querySelector("#logo")
+const pointer = document.querySelector("#pointer")
 let icon;
 
 playingNow.onclick=()=>{
@@ -25,6 +26,9 @@ logo.onclick=()=>{
     navigation.style.display="flex"
     removeAllIconColor()
     allicons[0].src="assets/home_bold2.svg"
+}
+const removePointer=()=>{
+    pointer.style.display ="none"
 }
 function showPage(page){
     page.style.display = "flex"
@@ -65,7 +69,7 @@ function changePage(){
 
             switch(targetPage){
                 case "homebtn": {showPage(homepage);changeIconColor("home_bold2")}; break;
-                case "notificationbtn":{showPage(notificationpage);changeIconColor("notification_bold2")}; break;
+                case "notificationbtn":{showPage(notificationpage);changeIconColor("notification_bold2");removePointer()}; break;
                 case "addbtn":{showPage(homepage);changeIconColor("add_bold2")}; break;
                 case "playlistbtn":{showPage(homepage);changeIconColor("playlist_bold2")}; break;
                 case "settingsbtn": {showPage(settingspage);changeIconColor("setting_bold2")}; break;

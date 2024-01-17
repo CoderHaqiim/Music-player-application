@@ -16,12 +16,16 @@
     --header-size-iii:1.2rem;
     --normal-size:1rem;
     --header-size-mini:1.2rem;
-    --liner:rgba(255, 255, 255, 0.425);
+    --liner:rgba(255, 255, 255, 0.121);
     --background:#0a0909;
     --text:rgba(255, 255, 255, 0.795);
     --glass:#ffffff25;
     --glass2:#ffffff09;
     --accent:#2ef45c;
+}
+html{
+    height: 100vh;
+    width:100%
 }
 body{
     height:100vh;
@@ -30,7 +34,10 @@ body{
     background-color:var(--background);
     min-height:720px;
     overflow:scroll;
-    position:fixed;
+}
+body::-webkit-scrollbar{
+    width: 0px;
+    height:0px;
 }
 button{
     outline:none;
@@ -53,11 +60,15 @@ img{
 }
 nav{
     width:100%;
-    height:7%;
+    height:9%;
     display:flex;
     align-items: center;
     justify-content:center;
+    background-color:var(--background);
     border-bottom:solid 1px var(--liner);
+    position:sticky;
+    top: 0px;
+    z-index:1000;
 }
 nav .container{
     justify-content: space-between;
@@ -65,7 +76,7 @@ nav .container{
 #logo{
     width:50px;
     height:50px;
-    background-color:green;
+    padding:10px 20px 10px 0px; 
 }
 #search-n-profile{
     width:auto;
@@ -82,7 +93,6 @@ nav .container{
     display: flex;
     justify-content: right;
     border-radius:var(--round-iv);
-    border:1px solid var(--liner);
 }
 #searchbtn{
     width:40px;
@@ -90,7 +100,7 @@ nav .container{
     border-radius:var(--round);
     cursor:pointer;
     padding:8px;
-    background-color:transparent;
+    background-color:var(--glass2);
 }
 #searchbar{
     width:1px;
@@ -115,11 +125,10 @@ nav .container{
 }
 #app{
     width:100%;
-    height:93%;
+    height:82.5%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:5px 0% 20% 0%;
 }
 /* #app .container{
    
@@ -136,7 +145,6 @@ main{
     height:100%;
     display:flex;
     align-items: center;
-    padding:0px 0px 80px 0px;
     justify-content:space-around;
     flex-direction: column;
 }
@@ -145,7 +153,7 @@ main{
     width:100%;
     display: flex;
     align-items: center;
-    font-size:var(--header-size-mini);
+    font-size:var(--header-size-iii);
 }
 .heading-n-slider{
     width:100%;
@@ -153,15 +161,14 @@ main{
 }
 .heading{
     width: 100%;
-    height:15%;
+    height:20%;
     font-size:var(--header-size-iii);
-    font-weight: bold;
     display: flex;
     align-items: center;
 }
 .slider{
     width:100%;
-    height:85%;
+    height:90%;
     position: relative;
 }
 .slides{
@@ -169,19 +176,22 @@ main{
     height: 100%;
     align-items: center;
     display:flex;
-    overflow-x:scroll;
+    overflow-x:auto;
     gap:15px;
 }
-.slide{
-    width:150px;
-    height:100%;
+.slides::-webkit-scrollbar{
+    width:0px;
+    height:0px;
+}
+.slide, .slide img{
+    width:120px;
+    height:120px;
     border-radius:var(--round-iii);
-    background-color: blueviolet;
     flex-shrink:0;
 }
 #playing{
     width:100%;
-    height:19%;
+    height:15%;
     display: flex;
     border-radius:var(--round-iii);
     align-items: center;
@@ -190,6 +200,15 @@ main{
     padding:10px;
     border:solid 1px var(--accent);
     position:relative;
+}
+#play-one{
+    width:33px;
+    height: 33px;
+    background-color: rgba(0, 0, 0, 0.283);
+    border-radius:var(--round-ii);
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
 }
 #playingnow{
     position:absolute;
@@ -238,7 +257,7 @@ main{
 }
 #navigation{
     width:100%;
-    height:8.5vh;
+    height:60px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -252,20 +271,26 @@ main{
     width:50px;
     height:50px;
     padding:12px;
-    background-color:var(--glass);
+    background-color:var(--glass2);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius:var(--round);
     position:relative;
 }
-.pointer{
+#pointer{
     position:absolute;
-    width:12px;
-    height:12px;
+    width:15px;
+    height:15px;
     top:1px;
     right:1px;
+    color:black;
+    font-weight: bold;
     background-color:var(--accent);
+    font-size:0.7rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     border-radius:var(--round);
 }
 
