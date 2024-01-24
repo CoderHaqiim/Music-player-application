@@ -306,7 +306,6 @@ main{
     height:10%;
     font-size:var(--header-size-i);
     font-weight: bold;
-    border-bottom:solid 1px var(--liner);
     display: flex;
     align-items: center;
 }
