@@ -2,27 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="notifications.css">
-    <link rel="stylesheet" href="settings.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="player.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="styles/notifications.css">
+    <link rel="stylesheet" href="styles/addsongs.css">
+    <link rel="stylesheet" href="styles/settings.css">
+    <link rel="stylesheet" href="styles/playlists.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/player.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
     <title>Document</title>
 </head>
 <body>
-    <audio id="playbox">
-        <source src="assets/songs/doin' just fine.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="playbox" src="assets/songs/doin' just fine.mp3"> </audio>
+    <div id="searchdropdown">
+        <input id="itemsearch" type="search">
+    </div>
     <nav>
         <div class="container">
             <div id="logo">
-                <img src="assets/arrow-back.svg" alt="">
+                <img src="assets/svgs/arrow-back.svg" alt="">
             </div>
             <div id="search-n-profile">
                 <div id="search">
                     <input type="text" id="searchbar"> </input>
                     <button id="searchbtn">
-                        <img src="assets/search_bold.svg" alt="">
+                        <img src="assets/svgs/search_bold.svg" alt="">
                     </button>
                 </div>
                 <div id="profile">A</div>
@@ -34,30 +37,20 @@
             <aside></aside>
             <main>
                 <!-- homepage -->
-
-
-
-
-
-
-
-
                 <div id="home" class="page">
                     <div id="greetings" class="title">Hello Haqiim,</div>
-
-                    
                     <div class="heading-n-slider">
                         <div class="heading">Albums</div>
                         <div class="slider">
                             <div class="slides">
                                 <div class="slide" id="slide1">
-                                    <img src="assets/under_the_streetlight.jpeg" alt="">
+                                    <img src="assets/pictures/under_the_streetlight.jpeg" alt="">
                                 </div>
                                 <div class="slide" id="slide2">
-                                    <img src="assets/cooleyhighharmony.jpeg" alt="">
+                                    <img src="assets/pictures/cooleyhighharmony.jpeg" alt="">
                                 </div>
                                 <div class="slide" id="slide3">
-                                    <img src="assets/bad.jpeg" alt="">
+                                    <img src="assets/pictures/bad.jpeg" alt="">
                                 </div>
                                 <div class="slide" id="slide3"></div>
                                 <div class="slide" id="slide4"></div>
@@ -74,13 +67,13 @@
                         <div class="slider">
                             <div class="slides">
                                 <div class="slide" id="slide1">
-                                    <img src="assets/edsheeran.jpeg" alt="">
+                                    <img src="assets/pictures/edsheeran.jpeg" alt="">
                                 </div>
                                 <div class="slide" id="slide2">
-                                    <img src="assets/simi.jpeg" alt="">
+                                    <img src="assets/pictures/simi.jpeg" alt="">
                                 </div>
                                 <div class="slide" id="slide3">
-                                    <img src="assets/burnaboy.jpeg" alt="">
+                                    <img src="assets/pictures/burnaboy.jpeg" alt="">
                                 </div>
                                 <div class="slide" id="slide3">
                                     <img src="assets/" alt="">
@@ -90,11 +83,11 @@
                     </div>
                     <div id="playing">
                         <div class="playbtn" id="play-one">
-                            <img src="assets/play.svg" alt="">
+                            <img src="assets/svgs/play.svg" alt="">
                         </div>
                         <div id="playingnow">now playing</div>
                         <div id="disc">
-                            <img src="assets/disk.png" alt="">
+                            <img src="assets/pictures/disk.png" alt="">
                         </div>
                         <div id="song-n-author" href="player.html">
                             <div id="song" class="title">Can you feel the love tonight</div>
@@ -103,11 +96,30 @@
                     </div>
                 </div>
                 <!-- homepage end -->
+                <div id="playlists" class="page">
+                    <div class="pagetitle">
+                        Playlists
+                    </div>
+                    <div id="allplaylists">
+
+
+                    </div>
+                </div>
+                <!--add songs-->
+                <div id="addsongs" class="page">
+                    <div class="pagetitle">
+                        Add songs
+                    </div>
+                    <div id="songtools">
+
+
+                    </div>
+                </div>
                 <!-- playerpage -->
                 <div id="player" class="page">
                     <div id="back-n-love">
                         <div id="love">
-                            <img src="assets/heart.svg" alt="">
+                            <img src="assets/svgs/heart.svg" alt="">
                         </div>
                     </div>
                     <div id="musicbox-n-playrange">
@@ -124,19 +136,19 @@
                     </div>
                     <div id="playcontrols">
                         <div class="playcontrol" id="repeat">
-                            <img src="assets/repeat-square.svg" alt="">
+                            <img src="assets/svgs/repeat-square2.svg" alt="">
                         </div>
                         <div class="playcontrol" id="previous">
-                            <img src="assets/previous.svg" alt="">
+                            <img src="assets/svgs/previous.svg" alt="">
                         </div>
                         <div class="playcontrol" id="play-pause">
-                            <img src="assets/play.svg" alt="">
+                            <img src="assets/svgs/play.svg" alt="">
                         </div>
                         <div class="playcontrol" id="next">
-                            <img src="assets/next.svg" alt="">
+                            <img src="assets/svgs/next.svg" alt="">
                         </div>
                         <div class="playcontrol" id="shuffle">
-                            <img src="assets/shuffle.svg" alt="">
+                            <img src="assets/svgs/shuffle.svg" alt="">
                         </div>
                     </div>
                 </div>
@@ -178,24 +190,24 @@
     </div>
     <div id="navigation">
         <button class="navbtn" id="homebtn">
-            <img class="allicon" src="assets/home_bold2.svg" alt="">
+            <img class="allicon" src="assets/svgs/home_bold2.svg" alt="">
         </button>
         <button class="navbtn" id="playlistbtn">
-            <img class="allicon" src="assets/playlist_bold.svg" alt="">
+            <img class="allicon" src="assets/svgs/playlist_bold.svg" alt="">
         </button>
         <button class="navbtn" id="addbtn">
-            <img class="allicon" src="assets/add_bold.svg" alt="">
+            <img class="allicon" src="assets/svgs/add_bold.svg" alt="">
         </button>
         <button class="navbtn" id="notificationbtn">
             <div id ="pointer">1</div>
-            <img class="allicon" src="assets/notification_bold.svg" alt="">
+            <img class="allicon" src="assets/svgs/notification_bold.svg" alt="">
         </button>
         <button class="navbtn" id="settingsbtn">
-            <img class="allicon" src="assets/setting_bold.svg" alt="">
+            <img class="allicon" src="assets/svgs/setting_bold.svg" alt="">
         </button>
     </div>
-    <script src="script.js"></script>
-    <script src="player.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/player.js"></script>
 
 </body>
 </html>
