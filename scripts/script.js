@@ -11,6 +11,10 @@ const playingNow = document.querySelector("#playing")
 const pages = document.querySelectorAll(".page")
 const allicons = document.querySelectorAll(".allicon")
 const logo = document.querySelector("#logo")
+const activenav = document.querySelector(".navactive")
+const logoImg = logo.children[0]
+const aside = document.querySelector("#asidecontainer")
+const aside2 = document.querySelector("#asidecontainer2")
 const pointer = document.querySelector("#pointer")
 const searchbtn = document.getElementById("searchbtn")
 const searchdropdown = document.getElementById("searchdropdown")
@@ -19,20 +23,6 @@ const addsongs = document.getElementById('addsongs')
 let icon;
 let searchdown = false;
 
-console.log(addsongs)
-
-itemsearch.onfocus = () =>{
-    console.log(this)
-    itemsearch.style.outlineColor = "var(--accent)"
-    itemsearch.style.outline = "solid"
-    itemsearch.style.caretColor= "var(--accent)"
-    itemsearch.style.border= "none"
-}
-playingNow.onclick = () =>{
-    home.style.display="none"
-    playerpage.style.display="flex"
-    navigation.style.display="none"
-}
 const slidesearchbar = () =>{
     !searchdown ? showdropdown() : hidedropdown()
 }
@@ -44,6 +34,17 @@ const showdropdown = () => {
 const hidedropdown = () =>{
     searchdropdown.style.display = "none"
     searchdown = false
+}
+itemsearch.onfocus = () =>{
+    itemsearch.style.outlineColor = "var(--accent)"
+    itemsearch.style.outline = "solid"
+    itemsearch.style.caretColor= "var(--accent)"
+    itemsearch.style.border= "none"
+}
+playingNow.onclick = () =>{
+    home.style.display="none"
+    playerpage.style.display="flex"
+    navigation.style.display="none"
 }
 searchbtn.onclick = () => slidesearchbar();
 logo.onclick=()=>{
@@ -80,16 +81,20 @@ function removeAllIconColor(){
     }
 }
 function hidePages(){
-    pages.forEach(page=>{
+    pages.forEach(page => {
         page.style.display="none"
     })
+    if(innerWidth >= 1000){
+        playerpage.style.display = "flex"
+    }
 }
 function selectButtonIcon(btn){
     icon = btn.querySelector("img")
 }
 function changePage(){
     navbtn.forEach(btn=>{
-        btn.onclick=(e)=>{
+        btn.onclick = (e) => {
+            btn.append(activenav)
             removeAllIconColor()
             selectButtonIcon(btn)
             hidePages()
@@ -106,4 +111,14 @@ function changePage(){
         }
     })
 }
+
+
+if(innerWidth >= 1000){
+    navbtn.forEach(btn=>{
+        aside.append(btn)
+    })
+    aside2.append(playerpage)
+
+}
+
 changePage()

@@ -5,7 +5,24 @@ const previousbtn = document.querySelector("#previous")
 const nextbtn = document.querySelector("#next")
 const repeat = document.querySelector("#repeat")
 const shuffle = document.querySelector("#shuffle")
-let repeatCounter = 0;
+const playRange = document.querySelector ("#range")
+const disc = document.querySelector("#disc")
+const unith = document.querySelector("#unith")
+const unit = document.querySelector("#unit")
+const tens = document.querySelector("#tens")
+const tenth = document.querySelector("#tenth")
+const endPlay = document.querySelector("#endplay")
+const song = document.querySelectorAll(".song")
+const author = document.querySelectorAll(".author")
+let endPlayVal = endPlay.innerText
+
+let unithCounter = 0
+let tenthCounter = 0
+let unitCounter = 0
+let tensCounter = 0
+let currenttime = 0
+let timeInterval
+let rangeInterval
 const songs = [
     {
         name: `doin' just fine`,
@@ -51,29 +68,85 @@ const songs = [
     }
     
 ]
-
 const allSongs = songs.length - 1
+let repeatCounter = 0;
 let songIndex = 0
 const playingSong = 'hello'
 
 
+song.forEach((song)=>{
+    song.innerHTML =`<strong>${songs[0].name}</strong>`
+})
+author.forEach((author)=>{
+    author.innerText = `${songs[0].author}`
+})
 
 
 const musicPlayer = {
     playing: false,
     play:function(){
+
+        disc.style.animationName = `spin`
         playbox.play()
+        setTimeout(()=>{
+            let playtime = Number(playbox.duration/60).toFixed(2)
+            endPlay.innerText = playtime
+            this.trackPlay(playtime)
+        },200)
         this.playing = true
+        this.countPlaytime()
         playbtn.children[0].src = `assets/svgs/pause.svg`
         playBtnOne.children[0].src = `assets/svgs/pause.svg`
     },
     pause: function(){
+        disc.style.animationName = null
         playbox.pause()
         this.playing = false
         playbtn.children[0].src = `assets/svgs/play.svg`
         playBtnOne.children[0].src = `assets/svgs/play.svg`
+        this.countPlaytime()
+        clearInterval(rangeInterval)
+    },
+    next: function (){
+        clearInterval(timeInterval)
+        resetAll()
+        if(songIndex < allSongs){
+            songIndex++
+        }else{
+            songIndex = 0
+        }
+        playbox.src = `assets/songs/${songs[songIndex].file}`
+        song.forEach(song => {
+            song.innerHTML= `<strong>${songs[songIndex].name}</strong>`
+        })
+        author.forEach(author =>{
+            author.innerHTML = `${songs[songIndex].author}`
+        })
+        if(this.playing){
+            this.play()
+        }
+    },
+    previous: function(){
+        clearInterval(timeInterval)
+        resetAll()
+        if(songIndex > 0 ){
+            songIndex--
+        }else{
+            songIndex = 0
+        }
+        playbox.src = `assets/songs/${songs[songIndex].file}`
+        song.forEach(song => {
+            song.innerHTML = `<strong>${songs[songIndex].name}</strong>`
+        })
+        author.forEach(author =>{
+            author.innerHTML = `${songs[songIndex].author}`
+        })
+        if(this.playing){
+            this.play()
+        }
     },
     setRepeat: function(){
+        repeatCounter < 2 ? (repeatCounter++): (repeatCounter = 0)
         switch(repeatCounter){
             case 0 : (() => {
                 this.mode.repeat = "repeatAll"
@@ -104,73 +177,92 @@ const musicPlayer = {
                 shuffle.children[0].src = "assets/svgs/shuffle.svg"
             })()
     },
-    next: function (){
-        if(songIndex < allSongs){
-            songIndex++
-        }else{
-            songIndex = 0
-        }
-        playbox.src = `assets/songs/${songs[songIndex].file}`
+    countPlaytime: function(){
         if(this.playing){
-            this.play()
-        }
-    },
-    previous: function(){
-        if(songIndex > 0 ){
-            songIndex--
+            timeInterval = setInterval(()=>{
+                console.log(playbox.currentTime)
+                if(unithCounter < 9){
+                    unithCounter ++;
+                }else{
+                    unithCounter = 0
+                    if(tenthCounter < 5){
+                        tenthCounter++
+                    }else{
+                        tenthCounter = 0
+                        if( unitCounter < 9){
+                            unitCounter++
+                        }else{
+                            unitCounter = 0
+                            tensCounter ++
+                        }
+                        unit.innerText = unitCounter
+                    }
+                    tenth.innerText = tenthCounter
+                }
+                unith.innerText = unithCounter
+            },1000)
         }else{
-            songIndex = 0
-        }
-        playbox.src = `assets/songs/${songs[songIndex].file}`
-        if(!this.playing){
-            this.play()
+            clearInterval(timeInterval)
         }
     },
     volume:playbox.volume,
-    song:{
-        author:"",
-        duration:"",
-        image:"",
-        title:""
-    },
+
     mode:{
         repeat: null,
         shuffle:false
-    }
+    },
+    trackPlay: function(playtime){
+        playRange.max = playbox.duration
+        if(this.playing){
+            rangeInterval = setInterval(() => {
+                currenttime = playbox.currentTime
+                playRange.value = currenttime
+            },1000);
+        }else{
+            playRange.value = currenttime
+            clearInterval(rangeInterval)
+        }
+    } 
 }
 
 
 
 
-nextbtn.onclick = () =>{
-    musicPlayer.next()
+function resetAll(){
+    unithCounter = -1
+    tenth.innerText = 0
+    unit.innerText = 0
+    tens.innerText = 0
+    tenthCounter = 0
+    unitCounter = 0
+    tensCounter = 0
 }
+playRange.onchange = () => {
+    console.log(playRange.value)
+    console.log(playbox.currentTime)
+    playbox.currentTime = playRange.value
+}
+nextbtn.onclick = () => musicPlayer.next()
 previousbtn.onclick = () => musicPlayer.previous()
-
-const setPlaying = () =>{
-    musicPlayer.play()
-}
-const setPause = () =>{
-    musicPlayer.pause()
-}
-
-playbtn.onclick = () => !musicPlayer.playing? setPlaying(): setPause()
-playBtnOne.onclick = () => !musicPlayer.playing? setPlaying(): setPause()
+playbtn.onclick = () => !musicPlayer.playing? musicPlayer.play(): musicPlayer.pause()
+playBtnOne.onclick = () => !musicPlayer.playing? musicPlayer.play(): musicPlayer.pause()
 previous.onclick = () => musicPlayer.previous()     
 next.onclick = () => musicPlayer.next()
-
-repeat.onclick = () => {
-    repeatCounter < 2 ? (repeatCounter++): (repeatCounter = 0)
-    musicPlayer.setRepeat()
-}
+repeat.onclick = () => musicPlayer.setRepeat()
 shuffle.onclick = () => musicPlayer.setShuffle()
 
 
 playbox.onended = () => {
-    switch(musicPlayer.mode.repeat){
-        case "repeatAll" : musicPlayer.next(); break;
-        case "repeatOne" : musicPlayer.play();break;
-        case "repeatOff" : musicPlayer.playing = false; break;
-        default : musicPlayer.next()
+    const randomSong = Math.round(Math.random() * allSongs + 1)
+    if(musicPlayer.mode.shuffle){
+        playbox.src = `assets/songs/${songs[randomSong].file}`
+        musicPlayer.play()
+    }else{
+        switch(musicPlayer.mode.repeat){
+            case "repeatAll" : musicPlayer.next(); break;
+            case "repeatOne" : musicPlayer.play();break;
+            case "repeatOff" : musicPlayer.playing = false; break;
+            default : musicPlayer.next()
+        }
     }
 }
