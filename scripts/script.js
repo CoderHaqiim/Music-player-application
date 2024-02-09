@@ -20,6 +20,7 @@ const searchbtn = document.getElementById("searchbtn")
 const searchdropdown = document.getElementById("searchdropdown")
 const itemsearch = document.getElementById("itemsearch")
 const addsongs = document.getElementById('addsongs')
+const main = document.querySelector("#main")
 let icon;
 let searchdown = false;
 
@@ -86,6 +87,8 @@ function hidePages(){
     })
     if(innerWidth >= 1000){
         playerpage.style.display = "flex"
+    }else{
+        playerpage.style.display = 'none'
     }
 }
 function selectButtonIcon(btn){
@@ -112,13 +115,27 @@ function changePage(){
     })
 }
 
+window.onresize = () =>{
+    if(innerWidth >= 1000){
+        navbtn.forEach(btn=>{
+            aside.append(btn)
+        })
+        playerpage.style.display = 'flex'
+        aside2.append(playerpage)
+        navigation.style.display="none"
+    }else{
+        playerpage.style.display = "none"
+        main.append(playerpage)
+    }
+}
 
 if(innerWidth >= 1000){
     navbtn.forEach(btn=>{
         aside.append(btn)
     })
     aside2.append(playerpage)
-
+}else{
+    main.append(playerpage)
 }
 
 changePage()

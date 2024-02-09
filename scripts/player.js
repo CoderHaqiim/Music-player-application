@@ -180,7 +180,6 @@ const musicPlayer = {
     countPlaytime: function(){
         if(this.playing){
             timeInterval = setInterval(()=>{
-                console.log(playbox.currentTime)
                 if(unithCounter < 9){
                     unithCounter ++;
                 }else{
@@ -217,7 +216,7 @@ const musicPlayer = {
             rangeInterval = setInterval(() => {
                 currenttime = playbox.currentTime
                 playRange.value = currenttime
-            },1000);
+            },3000);
         }else{
             playRange.value = currenttime
             clearInterval(rangeInterval)
@@ -238,10 +237,14 @@ function resetAll(){
     tensCounter = 0
 }
 playRange.onchange = () => {
-    console.log(playRange.value)
-    console.log(playbox.currentTime)
     playbox.currentTime = playRange.value
+    
 }
+playRange.onmousedown = ()=>{
+    
+}
+
+
 nextbtn.onclick = () => musicPlayer.next()
 previousbtn.onclick = () => musicPlayer.previous()
 playbtn.onclick = () => !musicPlayer.playing? musicPlayer.play(): musicPlayer.pause()

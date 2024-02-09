@@ -11,7 +11,6 @@
     justify-content:space-between;
     align-items: center;
     flex-direction: column;
-    padding:20px 0px;
 }
 #player .container{
     width:100%;
@@ -161,7 +160,9 @@
         width:100%;
         padding: 0px;
         border-radius: var(--round-iii);
-        border:1px solid var(--accent);
+        border:1px solid #2ef45c2a ;
+        filter: blur(0.5);
+        background:linear-gradient(var(--glass2),#2ef45c0b);
     }
     .page{
         padding:0px;
