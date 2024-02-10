@@ -50,7 +50,7 @@
     width: 100%;
     height:10vh;
     margin-bottom:20px;
-    padding:0px 25px;
+    padding:10px;
 }
 #song2{
     width:100%;
@@ -102,8 +102,8 @@
 #range::-webkit-slider-thumb{
     -webkit-appearance:none;
     appearance: none;
-    height:12px;
-    width:12px;
+    height:15px;
+    width:15px;
     background:var(--accent);
     border-radius: 15px;
 }
@@ -124,6 +124,7 @@
     padding:10px;
     background-color: var(--glass2);
     border-radius:var(--round);
+    flex-shrink:0;
 }
 .playcontrol:hover{
     background-color: var(--glass);
@@ -160,9 +161,9 @@
         width:100%;
         padding: 0px;
         border-radius: var(--round-iii);
-        border:1px solid #2ef45c2a ;
+        /* border:1px solid #2ef45c2a ; */
         filter: blur(0.5);
-        background:linear-gradient(var(--glass2),#2ef45c0b);
+        /* background:linear-gradient(var(--glass2),#2ef45c0b); */
     }
     .page{
         padding:0px;
@@ -170,10 +171,7 @@
     #playcontrols{
         padding:0px;
         height:10%;
-    }
-    .playcontrol{
-        width: 45px;
-        height: 45px;
+        justify-content: space-between;
     }
     #playrange{
         width: 100%;
@@ -184,11 +182,12 @@
     }
     #back-n-love{
         justify-content: flex-start;
+        font-size:0.8rem;
     }
     #musicbox-n-playrange{
         padding: 0px;
         margin: 0px;
-        height:90%;
+        height:60%;
     }
     #song-n-author2{
         padding: 0px;
@@ -200,8 +199,33 @@
         justify-content: center;
         align-items: center;
         padding:20px;
+        justify-content:space-between;
     }
     #playtext{
         display: flex;
+    }
+    #author2{
+        font-size:0.8rem;
+    }
+    #author2,song2{
+        padding:0px;
+    }
+    .playcontrol{
+        width:30px;
+        height:30px;
+        background-color: var(--glass2);
+        border-radius:var(--round);
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        flex-shrink:0;
+    }
+    #range{
+       
+        height:3px;
+    }
+    #range::-webkit-slider-thumb{
+       width:8px;
+       height:8px;
     }
 }
