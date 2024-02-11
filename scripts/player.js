@@ -87,12 +87,12 @@ const musicPlayer = {
     play:function(){
 
         disc.style.animationName = `spin`
-        playbox.play()
         setTimeout(()=>{
+            playbox.play()
             let playtime = Number(playbox.duration/60).toFixed(2)
             endPlay.innerText = playtime
             this.trackPlay(playtime)
-        },200)
+        },1000)
         this.playing = true
         this.countPlaytime()
         playbtn.children[0].src = `assets/svgs/pause.svg`
