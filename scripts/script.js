@@ -9,6 +9,7 @@ const notebtn = document.querySelector("#notificationbtn")
 const navbtn = document.querySelectorAll(".navbtn")
 const playingNow = document.querySelector("#playing")
 const pages = document.querySelectorAll(".page")
+const loading = document.querySelector("#loading")
 const allicons = document.querySelectorAll(".allicon")
 const logo = document.querySelector("#logo")
 const activenav = document.querySelector(".navactive")
@@ -23,6 +24,10 @@ const addsongs = document.getElementById('addsongs')
 const main = document.querySelector("#main")
 let icon;
 let searchdown = false;
+
+window.addEventListener("load",()=>{
+    loading.style.display = "none"
+})
 
 const slidesearchbar = () =>{
     !searchdown ? showdropdown() : hidedropdown()
