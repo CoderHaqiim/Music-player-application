@@ -30,7 +30,11 @@ window.addEventListener("load",()=>{
 })
 
 const slidesearchbar = () =>{
-    !searchdown ? showdropdown() : hidedropdown()
+    if(innerWidth < 1000){
+        !searchdown ? showdropdown() : hidedropdown()
+    }else{
+        return
+    }
 }
 
 const showdropdown = () => {
@@ -53,6 +57,9 @@ playingNow.onclick = () =>{
     navigation.style.display="none"
 }
 searchbtn.onclick = () => slidesearchbar();
+
+
+
 logo.onclick=()=>{
     hidePages()
     home.style.display="flex"
