@@ -1,4 +1,7 @@
 const homepage = document.querySelector("#home")
+const next1 = document.querySelector("#next1")
+const next2 = document.querySelector("#next2")
+const scrollNext = document.querySelectorAll(".scrollnext")
 const settingspage = document.querySelector("#settings")
 const notificationpage = document.querySelector("#notifications")
 const playerpage = document.querySelector("#player")
@@ -8,6 +11,8 @@ const back = document.querySelector("#back")
 const notebtn = document.querySelector("#notificationbtn")
 const navbtn = document.querySelectorAll(".navbtn")
 const playingNow = document.querySelector("#playing")
+const slider1 = document.querySelector("#firstSlides")
+const slider2 = document.querySelector("#secondSlides")
 const pages = document.querySelectorAll(".page")
 const loading = document.querySelector("#loading")
 const allicons = document.querySelectorAll(".allicon")
@@ -24,6 +29,14 @@ const addsongs = document.getElementById('addsongs')
 const main = document.querySelector("#main")
 let icon;
 let searchdown = false;
+
+scrollNext.forEach(btn =>{
+    if(btn.id === "next1"){
+        btn.onclick = () => slider2.scrollBy({left:145, top:0, behavior:"smooth"})
+    }else{
+        btn.onclick = () => slider1.scrollBy({left:145, top:0, behavior:"smooth"})
+    }
+})
 
 window.addEventListener("load",()=>{
     loading.style.display = "none"

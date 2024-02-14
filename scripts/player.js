@@ -14,6 +14,10 @@ const tenth = document.querySelector("#tenth")
 const endPlay = document.querySelector("#endplay")
 const song = document.querySelectorAll(".song")
 const author = document.querySelectorAll(".author")
+const list = document.querySelector("#list")
+const activeSong = document.querySelector("#activesong")
+const listItems =[]
+
 let endPlayVal = endPlay.innerText
 
 let unithCounter = 0
@@ -73,6 +77,16 @@ let repeatCounter = 0;
 let songIndex = 0
 const playingSong = 'hello'
 
+songs.forEach((song)=>{
+    let listItem = document.createElement('div')
+    listItem.classList.add('list-item')
+    listItems.push(listItem)
+    listItem.innerHTML = `<strong>${song.author} &nbsp; </strong> - &nbsp ${song.name}`
+    list.append(listItem)
+})
+
+listItems[0].append(activeSong)
+
 
 song.forEach((song)=>{
     song.innerHTML =`<strong>${songs[0].name}</strong>`
@@ -80,7 +94,6 @@ song.forEach((song)=>{
 author.forEach((author)=>{
     author.innerText = `${songs[0].author}`
 })
-
 
 const musicPlayer = {
     playing: false,
@@ -112,13 +125,16 @@ const musicPlayer = {
         resetAll()
         if(songIndex < allSongs){
             songIndex++
+            list.scrollBy({top:55,left:0,behavior:"instant"})
         }else{
             songIndex = 0
+            list.scrollBy({top:-55 * allSongs,left:0,behavior:"instant"})
         }
         playbox.src = `assets/songs/${songs[songIndex].file}`
         song.forEach(song => {
             song.innerHTML= `<strong>${songs[songIndex].name}</strong>`
         })
+        listItems[songIndex].append(activeSong)
         author.forEach(author =>{
             author.innerHTML = `${songs[songIndex].author}`
         })
@@ -126,11 +142,13 @@ const musicPlayer = {
             this.play()
         }
     },
+
     previous: function(){
         clearInterval(timeInterval)
         resetAll()
         if(songIndex > 0 ){
             songIndex--
+            list.scrollBy({top:-55,left:0,behavior:"instant"})
         }else{
             songIndex = 0
         }
@@ -138,6 +156,7 @@ const musicPlayer = {
         song.forEach(song => {
             song.innerHTML = `<strong>${songs[songIndex].name}</strong>`
         })
+        listItems[songIndex].append(activeSong)
         author.forEach(author =>{
             author.innerHTML = `${songs[songIndex].author}`
         })
@@ -249,8 +268,8 @@ nextbtn.onclick = () => musicPlayer.next()
 previousbtn.onclick = () => musicPlayer.previous()
 playbtn.onclick = () => !musicPlayer.playing? musicPlayer.play(): musicPlayer.pause()
 playBtnOne.onclick = () => !musicPlayer.playing? musicPlayer.play(): musicPlayer.pause()
-previous.onclick = () => musicPlayer.previous()     
-next.onclick = () => musicPlayer.next()
+// previous.onclick = () => musicPlayer.previous()     
+// next.onclick = () => musicPlayer.next()
 repeat.onclick = () => musicPlayer.setRepeat()
 shuffle.onclick = () => musicPlayer.setShuffle()
 

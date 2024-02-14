@@ -12,259 +12,263 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="loading">
-        Loading app 
-        <div id="spinner">
-            <img src="assets/svgs/loading.svg" alt="">
+    <div class="containerall">
+        <div id="loading">
+            Loading app 
+            <div id="spinner">
+                <img src="assets/svgs/loading.svg" alt="">
+            </div>
         </div>
-    </div>
-
     
-    <audio id="playbox" src="assets/songs/doin' just fine.mp3"> </audio>
-    <div id="searchdropdown">
-        <input id="itemsearch" type="search">
-    </div>
-    <nav>
-        <div class="container">
-            <div id="logo">
-                <img src="assets/svgs/arrow-back.svg" alt="">
-            </div>
-            <div id="search-n-profile">
-                <div id="search">
-                    <input type="text" id="searchbar"> </input>
-                    <button id="searchbtn">
-                        <img src="assets/svgs/search_bold.svg" alt="">
-                    </button>
+        
+        <audio id="playbox" src="assets/songs/doin' just fine.mp3"> </audio>
+        <div id="searchdropdown">
+            <input id="itemsearch" type="search">
+        </div>
+        <nav>
+            <div class="container">
+                <div id="logo">
+                    <img src="assets/svgs/arrow-back.svg" alt="">
                 </div>
-                <div id="profile">A</div>
+                <div id="search-n-profile">
+                    <div id="search">
+                        <input type="text" id="searchbar"> </input>
+                        <button id="searchbtn">
+                            <img src="assets/svgs/search_bold.svg" alt="">
+                        </button>
+                    </div>
+                    <div id="profile">A</div>
+                </div>
+            </div>
+        </nav>
+        <div id="app">
+            <div class="container">
+                <aside id="aside">
+                    <div id="asidecontainer"></div>
+                </aside>
+                <main id="main">
+                    <!-- homepage -->
+                    <div id="home" class="page">
+                        <div class="container1">
+                            <div id="greetings" class="title">Hello Haqiim,</div>
+                            <div id="copy">Now you have access to your favourite songs on all your devices. Enjoy!</div>
+                            <div class="heading-n-slider">
+                                <div class="heading">Albums</div>
+                                <div class="slider">
+                                    <div class="slides" id="firstSlides">
+                                        <div class="slide" id="slide1">
+                                            <img src="assets/pictures/under_the_streetlight.jpeg" alt="">
+                                            <div class="singer">Under the streetlight</div>
+                                        </div>
+                                        <div class="slide" id="slide2">
+                                            <img src="assets/pictures/cooleyhighharmony.jpeg" alt="">
+                                            <div class="singer">Cooleyhighharmony</div>
+                                        </div>
+                                        <div class="slide" id="slide3">
+                                            <img src="assets/pictures/bad.jpeg" alt="">
+                                            <div class="singer">Bad</div>
+                                        </div>
+                                        <div class="slide" id="slide4">
+                                            <img src="assets/pictures/tbh.jpeg" alt="">
+                                            <div class="singer">TBH</div>
+                                        </div>
+                                        <div class="slide" id="slide5">
+                                            <img src="assets/pictures/westlife.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="scrollnext" id="next2">
+                                        <img src="assets/svgs/scrollnext.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="heading-n-slider">
+                                <div class="heading">Artists</div>
+                                <div class="slider">
+                                    <div class="slides" id="secondSlides">
+                                        <div class="slide" id="slide1">
+                                            <img src="assets/pictures/edsheeran.jpeg" alt="">
+                                            <div class="singer">Ed sheeran</div>
+                                        </div>
+                                        <div class="slide" id="slide2">
+                                            <img src="assets/pictures/simi.jpeg" alt="">
+                                            <div class="singer">Simi</div>
+                                        </div>
+                                        <div class="slide" id="slide3">
+                                            <img src="assets/pictures/burnaboy.jpeg" alt="">
+                                            <div class="singer">Burnaboy</div>
+                                        </div>
+                                        <div class="slide" id="slide4">
+                                            <img src="assets/pictures/fireboy.jpg" alt="">
+                                            <div class="singer">Fireboy</div>
+                                        </div>
+                                        <div class="slide" id="slide5">
+                                            <img src="assets/pictures/timi_dakolo.jpg" alt="">
+                                            <div class="singer">Timi Dakolo</div>
+                                        </div>
+                                        <div class="slide" id="slide6">
+                                            <img src="assets/pictures/mustafa.jpeg" alt="">
+                                            <div class="singer">Mustafa</div>
+                                        </div>
+                                        <div class="slide" id="slide7">
+                                            <img src="assets/pictures/passenger.jpg" alt="">
+                                            <div class="singer">Passenger</div>
+                                        </div>
+                                    </div>
+                                    <div class="scrollnext" id="next1">
+                                        <img src="assets/svgs/scrollnext.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="playing">
+                                <div class="playbtn" id="play-one">
+                                    <img src="assets/svgs/play.svg" alt="">
+                                </div>
+                                <div id="playingnow">now playing</div>
+                                <div id="disc">
+                                    <img src="assets/pictures/disk.png" alt="">
+                                </div>
+                                <div id="song-n-author" href="player.html">
+                                    <div id="song" class="song" class="title">Can you feel the love tonight</div>
+                                    <div id="author" class="author">Bryan Adams</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- homepage end -->
+                    <div id="playlists" class="page">
+                        <div class="pagetitle">
+                            Playlists
+                        </div>
+                        <div id="allplaylists">
+    
+    
+                        </div>
+                    </div>
+                    <!--add songs-->
+                    <div id="addsongs" class="page">
+                        <div class="pagetitle">
+                            Add songs
+                        </div>
+                        <div id="songtools">
+    
+    
+                        </div>
+                    </div>
+                    <!-- playerpage -->
+                    <div id="player" class="page">
+                        <div class="container1">
+                            <div id="back-n-love">
+                                <p id="playtext">Playing now</p>
+                                <div id="love">
+                                    <img src="assets/svgs/heart.svg" alt="">
+                                </div>
+                            </div>
+                            <div id="musicbox-n-playrange">
+                                <div id="musicbox"></div>
+                                <div id="song-n-author2">
+                                    <div id="song2" class="song">Can you feel the love tonight</div>
+                                    <div id="author2" class="author">Bryan Adams</div>
+                                </div>
+                                <div id="playrange">
+                                    <div id="startplay">
+                                        <div id="tens">0</div>
+                                        <div id="unit">0</div>:
+                                        <div id="tenth">0</div>
+                                        <div id="unith">0</div>
+                                    </div>
+                                    <input type="range" id="range" value="0">
+                                    <div id="endplay">00:00</div>
+                                </div>
+                            </div>
+                            <div id="playcontrols">
+                                <div class="playcontrol" id="repeat">
+                                    <img src="assets/svgs/repeat-square2.svg" alt="">
+                                </div>
+                                <div class="playcontrol" id="previous">
+                                    <img src="assets/svgs/previous.svg" alt="">
+                                </div>
+                                <div class="playcontrol" id="play-pause">
+                                    <img src="assets/svgs/play.svg" alt="">
+                                </div>
+                                <div class="playcontrol" id="next">
+                                    <img src="assets/svgs/next.svg" alt="">
+                                </div>
+                                <div class="playcontrol" id="shuffle">
+                                    <img src="assets/svgs/shuffle.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- settingspage -->
+                    <div id="settings" class="page">
+                        <div class="pagetitle">
+                            Settings
+                        </div>
+                        <div id="allsettings">
+                            <div class="padded" id="theme">
+                                <div class="setting_title">Themes</div>
+                                <div id="themes">
+                                    <div class="theme" id="theme1"></div>
+                                    <div class="theme" id="theme1"></div>
+                                    <div class="theme" id="theme1"></div>
+                                </div>
+                            </div>
+                            <div class="padded" id="account">
+                                <div class="setting_title">Account settings</div>
+                                <div id="set-account">
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- notificationspage -->
+                    <div id="notifications" class="page">
+                        <div class="pagetitle">Notifications</div>
+                        <div id="notes">
+                            <div class="note">
+                                <p id="note-paragraph" >Hello. Thank you for choosing our app. Now you can save your favourite songs and have access to them on all your devices from anywhere in the world.</p>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <aside id="aside2">
+                    <div id="asidecontainer2">
+                        <div id="current-playlist">
+                            <div id="title">All songs</div>
+                            <div id="list">
+                                <div id="activesong"></div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <!-- playerpage end -->
+                <!-- navigation -->
             </div>
         </div>
-    </nav>
-    <div id="app">
-        <div class="container">
-            <aside id="aside">
-                <div id="asidecontainer"></div>
-            </aside>
-            <main id="main">
-                <!-- homepage -->
-                <div id="home" class="page">
-                    <div class="container1">
-                        <div id="greetings" class="title">Hello Haqiim,</div>
-                        <div id="copy">Now you have access to your favourite songs on all your devices. Enjoy!</div>
-                        <div class="heading-n-slider">
-                            <div class="heading">Albums</div>
-                            <div class="slider">
-                                <div class="slides">
-                                    <div class="slide" id="slide1">
-                                        <img src="assets/pictures/under_the_streetlight.jpeg" alt="">
-                                        <div class="singer">Under the streetlight</div>
-                                    </div>
-                                    <div class="slide" id="slide2">
-                                        <img src="assets/pictures/cooleyhighharmony.jpeg" alt="">
-                                        <div class="singer">Cooleyhighharmony</div>
-                                    </div>
-                                    <div class="slide" id="slide3">
-                                        <img src="assets/pictures/bad.jpeg" alt="">
-                                        <div class="singer">Bad</div>
-                                    </div>
-                                    <div class="slide" id="slide4">
-                                        <img src="assets/pictures/tbh.jpeg" alt="">
-                                        <div class="singer">TBH</div>
-                                    </div>
-                                    <div class="slide" id="slide5">
-                                        <img src="assets/pictures/westlife.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="scrollnext">
-                                    <img src="assets/svgs/scrollnext.svg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="heading-n-slider">
-                            <div class="heading">Artists</div>
-                            <div class="slider">
-                                <div class="slides">
-                                    <div class="slide" id="slide1">
-                                        <img src="assets/pictures/edsheeran.jpeg" alt="">
-                                        <div class="singer">Ed sheeran</div>
-                                    </div>
-                                    <div class="slide" id="slide2">
-                                        <img src="assets/pictures/simi.jpeg" alt="">
-                                        <div class="singer">Simi</div>
-                                    </div>
-                                    <div class="slide" id="slide3">
-                                        <img src="assets/pictures/burnaboy.jpeg" alt="">
-                                        <div class="singer">Burnaboy</div>
-                                    </div>
-                                    <div class="slide" id="slide4">
-                                        <img src="assets/pictures/fireboy.jpg" alt="">
-                                        <div class="singer">Fireboy</div>
-                                    </div>
-                                    <div class="slide" id="slide5">
-                                        <img src="assets/pictures/timi_dakolo.jpg" alt="">
-                                        <div class="singer">Timi Dakolo</div>
-                                    </div>
-                                    <div class="slide" id="slide6">
-                                        <img src="assets/pictures/mustafa.jpeg" alt="">
-                                        <div class="singer">Mustafa</div>
-                                    </div>
-                                    <div class="slide" id="slide7">
-                                        <img src="assets/pictures/passenger.jpg" alt="">
-                                        <div class="singer">Passenger</div>
-                                    </div>
-                                </div>
-                                <div class="scrollnext">
-                                    <img src="assets/svgs/scrollnext.svg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div id="playing">
-                            <div class="playbtn" id="play-one">
-                                <img src="assets/svgs/play.svg" alt="">
-                            </div>
-                            <div id="playingnow">now playing</div>
-                            <div id="disc">
-                                <img src="assets/pictures/disk.png" alt="">
-                            </div>
-                            <div id="song-n-author" href="player.html">
-                                <div id="song" class="song" class="title">Can you feel the love tonight</div>
-                                <div id="author" class="author">Bryan Adams</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- homepage end -->
-                <div id="playlists" class="page">
-                    <div class="pagetitle">
-                        Playlists
-                    </div>
-                    <div id="allplaylists">
-
-
-                    </div>
-                </div>
-                <!--add songs-->
-                <div id="addsongs" class="page">
-                    <div class="pagetitle">
-                        Add songs
-                    </div>
-                    <div id="songtools">
-
-
-                    </div>
-                </div>
-                <!-- playerpage -->
-                <div id="player" class="page">
-                    <div class="container1">
-                        <div id="back-n-love">
-                            <p id="playtext">Playing now</p>
-                            <div id="love">
-                                <img src="assets/svgs/heart.svg" alt="">
-                            </div>
-                        </div>
-                        <div id="musicbox-n-playrange">
-                            <div id="musicbox"></div>
-                            <div id="song-n-author2">
-                                <div id="song2" class="song">Can you feel the love tonight</div>
-                                <div id="author2" class="author">Bryan Adams</div>
-                            </div>
-                            <div id="playrange">
-                                <div id="startplay">
-                                    <div id="tens">0</div>
-                                    <div id="unit">0</div>:
-                                    <div id="tenth">0</div>
-                                    <div id="unith">0</div>
-                                </div>
-                                <input type="range" id="range" value="0">
-                                <div id="endplay">00:00</div>
-                            </div>
-                        </div>
-                        <div id="playcontrols">
-                            <div class="playcontrol" id="repeat">
-                                <img src="assets/svgs/repeat-square2.svg" alt="">
-                            </div>
-                            <div class="playcontrol" id="previous">
-                                <img src="assets/svgs/previous.svg" alt="">
-                            </div>
-                            <div class="playcontrol" id="play-pause">
-                                <img src="assets/svgs/play.svg" alt="">
-                            </div>
-                            <div class="playcontrol" id="next">
-                                <img src="assets/svgs/next.svg" alt="">
-                            </div>
-                            <div class="playcontrol" id="shuffle">
-                                <img src="assets/svgs/shuffle.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- settingspage -->
-                <div id="settings" class="page">
-                    <div class="pagetitle">
-                        Settings
-                    </div>
-                    <div id="allsettings">
-                        <div class="padded" id="theme">
-                            <div class="setting_title">Themes</div>
-                            <div id="themes">
-                                <div class="theme" id="theme1"></div>
-                                <div class="theme" id="theme1"></div>
-                                <div class="theme" id="theme1"></div>
-                            </div>
-                        </div>
-                        <div class="padded" id="account">
-                            <div class="setting_title">Account settings</div>
-                            <div id="set-account">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- notificationspage -->
-                <div id="notifications" class="page">
-                    <div class="pagetitle">Notifications</div>
-                    <div id="notes">
-                        <div class="note">
-                            <p id="note-paragraph" >Hello. Thank you for choosing our app. Now you can save your favourite songs and have access to them on all your devices from anywhere in the world.</p>
-                        </div>
-                    </div>
-                </div>
-            </main>
-            <aside id="aside2">
-                <div id="asidecontainer2">
-                    <div id="current-playlist">
-                        <div id="title">All songs</div>
-                        <div id="list"></div>
-                    </div>
-                </div>
-            </aside>
-            <!-- playerpage end -->
-            <!-- navigation -->
+        <div id="navigation">
+            <button class="navbtn" id="homebtn">
+                <div class="navactive"></div>
+                <img class="allicon" src="assets/svgs/home_bold2.svg" alt="">
+                <p class="navtext">home</p>
+            </button>
+            <button class="navbtn" id="playlistbtn">
+                <img class="allicon" src="assets/svgs/playlist_bold.svg" alt="">
+                <p class="navtext">playlists</p>
+            </button>
+            <button class="navbtn" id="addbtn">
+                <img class="allicon" src="assets/svgs/add_bold.svg" alt="">
+                <p class="navtext">add songs</p>
+            </button>
+            <button class="navbtn" id="notificationbtn">
+                <div id ="pointer">1</div>
+                <img class="allicon" src="assets/svgs/notification_bold.svg" alt="">
+                <p class="navtext">notifications</p>
+            </button>
+            <button class="navbtn" id="settingsbtn">
+                <img class="allicon" src="assets/svgs/setting_bold.svg" alt="">
+                <p class="navtext">settings</p>
+            </button>
         </div>
-    </div>
-    <div id="navigation">
-        <button class="navbtn" id="homebtn">
-            <div class="navactive"></div>
-            <img class="allicon" src="assets/svgs/home_bold2.svg" alt="">
-            <p class="navtext">home</p>
-        </button>
-        <button class="navbtn" id="playlistbtn">
-            <img class="allicon" src="assets/svgs/playlist_bold.svg" alt="">
-            <p class="navtext">playlists</p>
-        </button>
-        <button class="navbtn" id="addbtn">
-            <img class="allicon" src="assets/svgs/add_bold.svg" alt="">
-            <p class="navtext">add songs</p>
-        </button>
-        <button class="navbtn" id="notificationbtn">
-            <div id ="pointer">1</div>
-            <img class="allicon" src="assets/svgs/notification_bold.svg" alt="">
-            <p class="navtext">notifications</p>
-        </button>
-        <button class="navbtn" id="settingsbtn">
-            <img class="allicon" src="assets/svgs/setting_bold.svg" alt="">
-            <p class="navtext">settings</p>
-        </button>
     </div>
     <script src="scripts/script.js"></script>
     <script src="scripts/player.js"></script>

@@ -221,7 +221,6 @@
         flex-shrink:0;
     }
     #range{
-       
         height:3px;
     }
     #range::-webkit-slider-thumb{
