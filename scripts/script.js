@@ -140,31 +140,31 @@ function changePage(){
     })
 }
 
-// window.onresize = () =>{
-//     if(innerWidth >= 1000){
-//             navbtn.forEach(btn=>{
-//             aside.append(btn)
-//         })
-//         playerpage.style.display = 'flex'
-//         aside2.append(playerpage)
-//         navigation.style.display="none"
-//     }else{
-//         playerpage.style.display = "none"
-//         main.append(playerpage)
-//     }
-// }
+window.onresize = () =>{
+    if(innerWidth >= 1000){
+            navbtn.forEach(btn=>{
+            aside.append(btn)
+        })
+        playerpage.style.display = 'flex'
+        aside2.append(playerpage)
+        navigation.style.display="none"
+    }else{
+        playerpage.style.display = "none"
+        main.append(playerpage)
+    }
+}
 
-console.log(innerWidth)
+console.log(window)
 
 
-// if(innerWidth >= 1000){
-//     navbtn.forEach(btn=>{
-//         aside.append(btn)
-//     })
-//     playerpage.style.display = 'flex'
-//     aside2.append(playerpage)
-// }else{
-//     main.append(playerpage)
-// }
+if(innerWidth >= 1000){
+    navbtn.forEach(btn=>{
+        aside.append(btn)
+    })
+    playerpage.style.display = 'flex'
+    aside2.append(playerpage)
+}else{
+    main.appendChild(playerpage)
+}
 
 changePage()
