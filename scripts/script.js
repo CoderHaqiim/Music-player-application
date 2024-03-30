@@ -140,24 +140,24 @@ function changePage(){
     })
 }
 
-window.onresize = () =>{
-    if(innerWidth >= 1000 && window.innerHeight >= 600){
-            navbtn.forEach(btn=>{
-            aside.append(btn)
-        })
+addEventListener('resize',()=>{
+    if(innerWidth >= 1000 ){
+        navbtn.forEach(btn=>{
+        aside.append(btn)
+    })
         playerpage.style.display = 'flex'
         aside2.append(playerpage)
         navigation.style.display="none"
     }else{
-        playerpage.style.display = "none"
+        playerpage.style.display = "flex"
         main.append(playerpage)
     }
-}
+})
 
 console.log(window)
 
 
-if(innerWidth >= 1000 && window.innerHeight >= 600){
+if(innerWidth >= 1000){
     navbtn.forEach(btn=>{
         aside.append(btn)
     })
