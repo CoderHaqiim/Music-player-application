@@ -66,6 +66,7 @@ itemsearch.onfocus = () =>{
     itemsearch.style.border= "none"
 }
 playingNow.onclick = () =>{
+    setPlayerDisplay = true
     home.style.display="none"
     playerpage.style.display="flex"
     navigation.style.display="none"
@@ -151,7 +152,7 @@ addEventListener('resize',()=>{
         navigation.style.display="none"
     }else{
         playerpage.style.display = "flex"
-        playerCase.append(playerpage)
+        setPlayerDisplay && (playerCase.append(playerpage))
     }
 })
 
@@ -165,7 +166,7 @@ if(innerWidth >= 1000){
     playerpage.style.display = 'flex'
     aside2.append(playerpage)
 }else{
-    playerCase.append(playerpage)
+    setPlayerDisplay && (playerCase.append(playerpage))
 }
 
 changePage()
