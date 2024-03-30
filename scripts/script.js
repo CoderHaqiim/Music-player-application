@@ -140,20 +140,21 @@ function changePage(){
     })
 }
 
-window.onresize = () =>{
-    if(innerWidth >= 1000){
-            navbtn.forEach(btn=>{
-            aside.append(btn)
-        })
-        playerpage.style.display = 'flex'
-        aside2.append(playerpage)
-        navigation.style.display="none"
-    }else{
-        playerpage.style.display = "none"
-        main.append(playerpage)
-    }
-}
+// window.onresize = () =>{
+//     if(innerWidth >= 1000){
+//             navbtn.forEach(btn=>{
+//             aside.append(btn)
+//         })
+//         playerpage.style.display = 'flex'
+//         aside2.append(playerpage)
+//         navigation.style.display="none"
+//     }else{
+//         playerpage.style.display = "none"
+//         main.append(playerpage)
+//     }
+// }
 
+console.log(innerWidth)
 
 
 // if(innerWidth >= 1000){
