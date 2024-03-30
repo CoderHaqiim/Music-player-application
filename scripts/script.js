@@ -27,6 +27,7 @@ const searchdropdown = document.getElementById("searchdropdown")
 const itemsearch = document.getElementById("itemsearch")
 const addsongs = document.getElementById('addsongs')
 const main = document.querySelector("#main")
+const playerCase = document.querySelector(".playercase")
 let icon;
 let searchdown = false;
 
@@ -150,7 +151,7 @@ addEventListener('resize',()=>{
         navigation.style.display="none"
     }else{
         playerpage.style.display = "flex"
-        main.append(playerpage)
+        playerCase.append(playerpage)
     }
 })
 
@@ -161,10 +162,10 @@ if(innerWidth >= 1000){
     navbtn.forEach(btn=>{
         aside.append(btn)
     })
-    playerpage.style.display = 'none'
+    playerpage.style.display = 'flex'
     aside2.append(playerpage)
 }else{
-    main.append(playerpage)
+    playerCase.append(playerpage)
 }
 
 changePage()
