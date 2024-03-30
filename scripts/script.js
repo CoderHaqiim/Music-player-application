@@ -161,7 +161,7 @@ if(innerWidth >= 1000){
     navbtn.forEach(btn=>{
         aside.append(btn)
     })
-    playerpage.style.display = 'flex'
+    playerpage.style.display = 'none'
     aside2.append(playerpage)
 }else{
     main.append(playerpage)
