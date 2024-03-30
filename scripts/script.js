@@ -28,6 +28,7 @@ const itemsearch = document.getElementById("itemsearch")
 const addsongs = document.getElementById('addsongs')
 const main = document.querySelector("#main")
 const playerCase = document.querySelector(".playercase")
+let setPlayerDisplay = false
 let icon;
 let searchdown = false;
 
