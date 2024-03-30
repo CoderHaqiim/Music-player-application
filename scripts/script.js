@@ -142,7 +142,7 @@ function changePage(){
 
 window.onresize = () =>{
     if(innerWidth >= 1000){
-        navbtn.forEach(btn=>{
+            navbtn.forEach(btn=>{
             aside.append(btn)
         })
         playerpage.style.display = 'flex'
@@ -154,10 +154,13 @@ window.onresize = () =>{
     }
 }
 
+
+
 if(innerWidth >= 1000){
     navbtn.forEach(btn=>{
         aside.append(btn)
     })
+    playerpage.style.display = 'flex'
     aside2.append(playerpage)
 }else{
     main.append(playerpage)
