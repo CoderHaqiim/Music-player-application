@@ -153,7 +153,10 @@ addEventListener('resize',()=>{
         navigation.style.display="none"
     }else{
         playerpage.style.display = "flex"
-        setPlayerDisplay && (playerCase.append(playerpage))
+        setPlayerDisplay && (()=>{
+            playerCase.append(playerpage)
+            playerpage.style.display = 'none'
+        })()
     }
 })
 
@@ -167,7 +170,11 @@ if(innerWidth >= 1000){
     playerpage.style.display = 'flex'
     aside2.append(playerpage)
 }else{
-    setPlayerDisplay && (playerCase.append(playerpage))
+    setPlayerDisplay && (()=>{
+        playerCase.append(playerpage)
+        playerpage.style.display = 'none'
+    })()
 }
+console.log(setPlayerDisplay)
 
 changePage()
